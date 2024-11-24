@@ -18,7 +18,7 @@ async def main():
         lista_korutina = [fetch_users(session) for i in range(5)]
         rezultat = await asyncio.gather(*lista_korutina)
         
-        for i in range(1):
+        for i in range(5):
             lista1 = [user["name"] for user in rezultat[i]]
             lista2 = [user["email"] for user in rezultat[i]]
             lista3 = [user["username"] for user in rezultat[i]]
@@ -26,6 +26,7 @@ async def main():
             print (lista1, "\n")
             print (lista2, "\n")
             print (lista3, "\n")
+            print ("\n", "--------------------------------------------")
 
     end_time = time.time()
     print(f"Vrijeme trajanja zadatka je {end_time - start_time:.2f}")    
