@@ -17,6 +17,7 @@ class Film(BaseModel):
 
     Images: List[str] = []
     Type: Literal["movie", "series"]
+    imdbID: str
 
     Director: Optional[str] = ""
     Released: Optional[str] = ""
